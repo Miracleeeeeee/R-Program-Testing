@@ -1,0 +1,21 @@
+# Setting up Programing environment #
+# Check R Version and update #
+# Better run in a Rgui #
+install.packages("installr")
+require(installr)
+updateR()
+
+# 01 - Current working directory #
+getwd()
+
+# 02 - Set working folder #
+setwd("C:\\Users\\eriliang\\Documents\\Engagement\\Data Analysis\\R\\006 R Programing\\R Programing Testing and Samples")
+
+# 03 - Test Working directory #
+getwd()
+
+# Check R Version and update #
+# Better run in a Rgui #
+install.packages("installr")
+require(installr)
+updateR()
