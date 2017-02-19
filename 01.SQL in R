@@ -1,0 +1,40 @@
+## SQL and R ##
+## Install R pakcages ##
+install.packages("dplyr")
+install.packages("sqldf")
+install.packages("data.table")
+install.packages("ggplot2")
+install.packages("compare")
+install.packages("plotrix")
+
+## Load R Pakcages ##
+require(downloader)  
+library(dplyr)
+library(sqldf)
+library(data.table)
+library(ggplot2)
+library(compare)
+library(plotrix)
+
+# 01.SELECT #
+Test02 = sqldf("SELECT * FROM Test01") # SQL
+Test02 = Test01 # R
+
+# 02.COUNT Rows #
+Test02_CountRows = sqldf("SELECT COUNT(NEDOCO) AS NumberCount
+                          FROM Test01;") #SQL
+Test02_CountRows = nrow(Test01) # R
+
+# 03.Limit - Select top X rows #
+
+Test03_Limit = sqldf("SELECT * 
+                      FROM Test01
+                      ORDER BY NEDOCO
+                      LIMIT 100;") # SQL
+
+Test03_Limit = head(Test01[order(Test01$NEDOCO),], 100)
+## Two Steps ##
+Test03_Limit = head(Test01, 100) # Top 100
+Test03_Order = Test01[order(Test01$NEDOCO),] # Order the table 
+
+
